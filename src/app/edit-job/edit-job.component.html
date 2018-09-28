@@ -1,0 +1,122 @@
+<div *ngIf="loader;else other_content">
+    <div class="loader">Loading...</div>
+</div>
+
+<ng-template #other_content>
+    <div id="base" class="row inputMargin">
+        <!-- <div class="col-md-2">
+         <div id="u18" class="ax_default image">
+            <img id="u18_img" class="img " src="images/home/u0.png"/> -->
+         <!-- </div>
+       
+        </div> --> 
+         <!-- Unnamed (Image) -->
+         <div class="col-md-12">
+       
+       
+         <!-- Unnamed (Rectangle) -->
+         <div id="u19" class="ax_default heading_1">
+           <div id="u19_div" class=""></div>
+           <div id="u19_text" class="text ">
+             <p><span>EDIT Job</span></p>
+           </div>
+         </div>
+       
+         <!-- Unnamed (HTML Button) -->
+        
+       
+         <!-- Unnamed (Text Field) -->
+         <!-- <div id="u21" class="ax_default text_field">
+           <input id="u21_input" type="text" value="Select File"/>
+         </div> -->
+       
+         <!-- Unnamed (Text Field) -->
+       
+       <form #myForm="ngForm" (ngSubmit)="onSubmit($event)"> 
+          <input  type="hidden"[(ngModel)]="job.id" name="id">
+         <!-- Unnamed (Text Field) -->
+         <div id="u23" class="ax_default text_field">
+             <input matInput placeholder="Job Name" [(ngModel)]="job.job_name" name="job_name">
+         </div>
+       
+         <div id="u23" class="ax_default text_field">
+             <input matInput placeholder="Job Location" [(ngModel)]="job.job_location" name="job_location">
+         </div>
+       
+         <!-- Unnamed (Text Field) -->
+         <div id="u24" class="ax_default text_field">
+             <input matInput placeholder="Owner Name" aria-label="Owner" [matAutocomplete]="auto" [formControl]="stateCtrl"  value="{{job.owner_name}}"[(ngModel)]="job.owner_name">
+             
+             
+             
+             
+             <mat-autocomplete #auto="matAutocomplete">
+               <mat-option *ngFor="let state of filteredStates | async" [value]="state.company_name" (change)="dataMetch()">
+                 <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+                 <span>{{state.company_name}}</span> |
+                 <small>Id: {{state.company_id}}</small>
+               </mat-option>
+             </mat-autocomplete>
+             
+         </div>
+       
+         <div id="u23" class="ax_default text_field">
+             <input matInput placeholder="Owner Location" [(ngModel)]="job.owner_location" name="owner_location">
+         </div>
+       
+         
+       
+         <!-- Unnamed (Text Field) -->
+         <div id="u24" class="ax_default text_field">
+           
+             <input matInput placeholder="Engineer Name" aria-label="Engineer" [matAutocomplete]="autoo" [formControl]="stateCtrlE" [(ngModel)]="job.engineer_name" value="{{job.engineer_name}}">
+             <mat-autocomplete #autoo="matAutocomplete">
+               <mat-option *ngFor="let state of filteredStatesE | async" [value]="state.company_name">
+                 <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+                 <span>{{state.company_name}}</span> |
+                 <!-- <small>Population: {{state.population}}</small> -->
+               </mat-option>
+             </mat-autocomplete>
+             
+         </div>
+       
+       
+         <div id="u24" class="ax_default text_field">
+           
+           <input matInput placeholder="Architect Name" aria-label="Architect" [matAutocomplete]="autooa" [formControl]="stateCtrlA"  value="{{job.architect}}" [(ngModel)]="job.architect">
+           <mat-autocomplete #autooa="matAutocomplete">
+             <mat-option *ngFor="let state of filteredStatesA | async" [value]="state.company_name">
+               <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+               <span>{{state.company_name}}</span> |
+               <!-- <small>Population: {{state.population}}</small> -->
+             </mat-option>
+           </mat-autocomplete>
+           
+       </div>
+       
+         <!-- Unnamed (Text Field) -->
+         <div id="u24" class="ax_default text_field">
+           
+             <input matInput placeholder="CONTRACTOR / CUSTOMER" aria-label="CONTRACTOR / CUSTOMER" [matAutocomplete]="autooo" [formControl]="stateCtrlC"  [(ngModel)]="job.contractor_customer"value="{{job.contractor_customer}}">
+             <mat-autocomplete #autooo="matAutocomplete">
+               <mat-option *ngFor="let state of filteredStatesC | async" [value]="state.company_name">
+                 <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+                 <span>{{state.company_name}}</span> |
+                 <!-- <small>Population: {{state.population}}</small> -->
+               </mat-option>
+             </mat-autocomplete>
+             
+         </div>
+         <div id="u24" class="ax_default text_field">
+          
+               <input value="submit" type="submit" class="submit-btn">
+               <a routerLink="" (click)="reload()">Back</a>
+         </div>
+        
+         </form>
+       
+       </div>
+       </div>
+       
+       
+  </ng-template>

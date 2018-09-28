@@ -1,0 +1,63 @@
+
+<div id="base" class="row inputMargin">
+  
+     <div class="col-md-12">
+   
+   
+     <!-- Unnamed (Rectangle) -->
+     <div id="u19" class="ax_default heading_1">
+       <div id="u19_div" class=""></div>
+       <div id="u19_text" class="text ">
+         <p><span>CREATE COMPANY</span></p>
+       </div>
+     </div>
+   
+   
+   
+   <form (ngSubmit)="onSubmit($event)" #myForm="ngForm"> 
+   
+     <!-- Unnamed (Text Field) -->
+     <div id="u23" class="container ax_default text_field"> 
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3 text-left" style="line-height:55px">
+                COMPANY NAME :
+            </div>
+            <div class="col-md-7 text-left">
+                <input matInput placeholder="Company Name"  name="company_name">          
+                  </div>
+          </div>
+        
+     </div>
+   
+     <!-- <div id="u23" class="ax_default text_field">
+         <input matInput placeholder="Company Location"  name="company_location">
+     </div> -->
+     <div id="u23" class="container ax_default text_field">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3 text-left" style="line-height:55px">
+                COMPANY TAGS :
+            </div>
+            <div class="col-md-7 text-left">
+                <input matInput placeholder="Company Tags"  name="tag">    
+                        </div>
+          </div>
+      
+    </div>
+    
+     <div id="u24" class="ax_default text_field">
+    
+   
+        <input value="SUBMIT" type="submit" class="submit-btn">
+        <a routerLink="" (click)="reload()">BACK</a>
+         
+     
+     </div>
+    
+     </form>
+   
+   </div>
+   </div>
+   
+   

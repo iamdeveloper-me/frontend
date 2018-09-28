@@ -1,0 +1,32 @@
+div#base {
+    text-align: center !important;
+}
+div#u23 input {
+    font-size: 20px;
+    margin: 4px;
+    padding: 6px 8px;
+}
+#u19_text span {
+    font-size: 20px;
+}
+.submit-btn{
+    width:100px !important;
+  }
+  .submit-btn{
+    background: #dddddd;
+    padding: 12px 30px;
+    border-radius: 3px;
+    margin: 10px;
+    border:1px solid #ccc;
+  }
+  #u24 a {
+    background: #dddddd;
+    padding: 15px 30px;
+    border-radius: 3px;
+    margin: 10px;
+    border:1px solid #ccc;
+    color: #222 !important;
+  }
+  div#u24 {
+    margin-top: 20px;
+}

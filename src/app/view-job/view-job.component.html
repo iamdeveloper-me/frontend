@@ -1,0 +1,35 @@
+
+<div *ngIf="loader;else other_content">
+        <div class="loader">Loading...</div>
+    </div>
+    
+    <ng-template #other_content>
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>JOB NAME</th>
+                            <th>JOB LOCATION</th>
+                            <th>OWNER NAME</th>
+                            <th>OWNER LOCATION</th>
+                            <th>ARCHITECT</th>
+                            <th>ENGINEER</th>
+                            <th>MANAGE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of job_data; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{data.job_name}}</td>
+                            <td>{{data.job_location}}</td>
+                            <td>{{data.owner_name}}</td>
+                            <td>{{data.owner_location}}</td>
+                            <td>{{data.architect}}</td>
+                            <td>{{data.engineer_name}}</td>
+                            <td><a class="btn btn-primary" routerLink="../edit-job/{{data.id}}">EDIT</a></td>
+                        </tr>
+                        
+                    </tbody>
+                    
+                </table>
+    </ng-template>
